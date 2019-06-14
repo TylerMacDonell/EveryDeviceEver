@@ -50,6 +50,7 @@ def main():
         
     with open('devices.csv', mode='w', encoding=ENCODING) as f:
         csv_writer = csv.writer(f)
+        csv_writer.writerow(["Model", "Brand", "Marketing Name", "Full Name"])
         for key in sorted(device_map):
             device = device_map[key]
             csv_writer.writerow([key, device['brand'], device['marketing_name'], device['full_name']])
